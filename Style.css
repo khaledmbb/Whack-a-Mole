@@ -1,0 +1,135 @@
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3161ff;
+}
+
+.welcome {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.welcome h1 {
+  font-weight: bolder;
+  font-size: 40px;
+}
+
+.welcome h2 {
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.options {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.options .flex {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+}
+
+.options .flex .active {
+  border: 3px solid white;
+}
+
+.game {
+  display: none;
+  padding: 10px 300px;
+}
+
+@media (max-width: 1400px) {
+  .game {
+    padding: 10px 200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .game {
+    padding: 10px 100px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .game {
+    padding: 10px 50px;
+  }
+}
+
+@media (max-width: 800px) {
+  .game {
+    padding: 10px 10px;
+  }
+}
+
+.game .container {
+  width: 100%;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 180px;
+}
+
+.game .container .box {
+  position: relative;
+  overflow: hidden;
+}
+
+.game .container .box .item {
+  cursor: pointer;
+  transition: .2s;
+  z-index: -1;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  left: 50%;
+  bottom: -104px;
+  transform: translateX(-50%);
+}
+
+.game .container .box .item.show {
+  bottom: 60px;
+  z-index: 1;
+}
+
+.game .container .box .sand {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  border-radius: 150px 150px 0 0;
+  background-color: #f35309;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+}
+
+.result {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
